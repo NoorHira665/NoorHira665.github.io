@@ -148,14 +148,22 @@ const pages = document.querySelectorAll("[data-page]");
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
 
-    for (let j = 0; i < pages.length; j++) {
-      if (this.innerHTML.toLowerCase() === pages[j].dataset.page) {
+    // 1. Remove the "active" highlight from all buttons
+    for (let j = 0; j < navigationLinks.length; j++) {
+      navigationLinks[j].classList.remove("active");
+    }
+    // Highlight the button that was just clicked
+    this.classList.add("active");
+
+    // 2. Find and show the correct page based on the button text
+    let targetPage = this.innerHTML.toLowerCase();
+    
+    for (let j = 0; j < pages.length; j++) {
+      if (targetPage === pages[j].dataset.page) {
         pages[j].classList.add("active");
-        navigationLinks[j].classList.add("active");
         window.scrollTo(0, 0);
       } else {
         pages[j].classList.remove("active");
-        navigationLinks[j].classList.remove("active");
       }
     }
 
