@@ -2054,3 +2054,15 @@ article {
 
 /* Education on about page */
 .about-edu-section { margin-top: 2rem; }
+.timeline-company {
+  color: #302722c3;
+  font-size: var(--fs-7);
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.project-img img {
+  width: 100%;      /* Fills the width of the container */
+  height: 200px;    /* Force a specific height */
+  object-fit: cover; /* Magic property: crops the image to fit without stretching */
+}
