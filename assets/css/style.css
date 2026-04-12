@@ -1996,3 +1996,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   margin-bottom: 4px;
 }
 
+.project-img img {
+  width: 100%;      /* Fills the width of the container */
+  height: 200px;    /* Force a specific height */
+  object-fit: cover; /* Magic property: crops the image to fit without stretching */
+}
